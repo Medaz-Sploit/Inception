@@ -62,6 +62,13 @@ COPY conf/www.conf /etc/php7/php-fpm.d/www.conf
 
 # static website
 COPY conf/index.html /tmp/index.html
+COPY conf/assets /tmp/assests
+COPY conf/images /tmp/images
+COPY conf/generic.html /tmp/generic.html
+COPY conf/elements.html /tmp/elements.html
+COPY conf/landing.html /tmp/landing.html
+COPY conf/LICENSE.txt /tmp/LICENSE.txt
+COPY conf/README.txt /tmp/README.txt
 
 # install wordpress
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

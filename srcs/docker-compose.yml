@@ -24,7 +24,6 @@ services:
       - "~/Desktop/inception/website:/var/www/html"
     depends_on:
       - mariadb
-      - redis
     networks:
       - frontend
       - backend

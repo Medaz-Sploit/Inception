@@ -1,15 +1,12 @@
 NAME = inception
 
-all: prune reload
+all: prune linux reload
 
 linux:
 	echo "127.0.0.1 mazoukni.42.fr" >> /etc/hosts
 	
 stop:
 	docker-compose -f srcs/docker-compose.yml down
-
-clean: stop
-	rm -rf ~/Desktop/inception
 
 prune:
 	docker system prune -f

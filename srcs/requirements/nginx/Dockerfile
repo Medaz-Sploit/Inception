@@ -7,9 +7,9 @@ RUN	apk update && apk upgrade && apk add --no-cache \
 # nginx SSL
 RUN mkdir /etc/nginx/ssl
 RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
-        -out /etc/nginx/ssl/mazouknni.pem \
-        -keyout /etc/nginx/ssl/mazouknni.key \
-        -subj "/C=IT/ST=Rome/L=Rome/O=42 School/OU=mazouknni/CN=mazouknni/"
+        -out /etc/nginx/ssl/mazoukni.pem \
+        -keyout /etc/nginx/ssl/mazoukni.key \
+        -subj "/C=IT/ST=Rome/L=Rome/O=42 School/OU=mazoukni/CN=mazoukni/"
 
 # nginx config
 RUN mkdir -p /run/nginx

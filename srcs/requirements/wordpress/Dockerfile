@@ -62,8 +62,8 @@ COPY conf/www.conf /etc/php7/php-fpm.d/www.conf
 
 # static website
 COPY conf/index.html /tmp/index.html
-ADD conf/assets /tmp/assets
-ADD conf/images /tmp/images
+COPY conf/assets /tmp/assets
+COPY conf/images /tmp/images
 COPY conf/generic.html /tmp/generic.html
 COPY conf/elements.html /tmp/elements.html
 COPY conf/landing.html /tmp/landing.html

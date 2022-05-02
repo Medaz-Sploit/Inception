@@ -9,13 +9,13 @@ if [ -f "/var/www/html/index.html" ]; then
 
     # static website
     mv /tmp/index.html /var/www/html/index.html
-    cp -r tmp/assets /var/www/html/assets
-    cp -r tmp/images /var/www/html/images
-    mv tmp/generic.html /var/www/html/generic.html
-    mv tmp/elements.html /var/www/html/elements.html
-    mv tmp/landing.html /var/www/html/landing.html
-    mv tmp/LICENSE.txt /var/www/html/LICENSE.txt
-    mv tmp/README.txt /var/www/html/README.txt
+    mv /tmp/assets /var/www/html/
+    mv /tmp/images /var/www/html/
+    mv /tmp/generic.html /var/www/html/generic.html
+    mv /tmp/elements.html /var/www/html/elements.html
+    mv /tmp/landing.html /var/www/html/landing.html
+    mv /tmp/LICENSE.txt /var/www/html/LICENSE.txt
+    mv /tmp/README.txt /var/www/html/README.txt
 
     wp core download --allow-root
     wp config create --dbname=$WP_DATABASE_NAME --dbuser=$WP_DATABASE_USR --dbpass=$WP_DATABASE_PWD --dbhost=$MYSQL_HOST --dbcharset="utf8" --dbcollate="utf8_general_ci" --allow-root

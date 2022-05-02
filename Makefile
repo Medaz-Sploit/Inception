@@ -10,8 +10,10 @@ stop:
 
 prune:
 	docker system prune -f
-	docker rm $(docker ps --filter=status=exited --filter=status=created -q)
-	docker rmi $(docker images -a -q)
+	docker rmi srcs_mariadb:latest
+	docker rmi srcs_nginx:latest
+	docker rmi srcs_wordpress:latest
+	docker rmi alpine:3.13
 
 
 reload: 

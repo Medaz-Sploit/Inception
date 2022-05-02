@@ -9,8 +9,8 @@ if [ -f "/var/www/html/index.html" ]; then
 
     # static website
     mv /tmp/index.html /var/www/html/index.html
-    mv tmp/assets /var/www/html/assets
-    mv tmp/images /var/www/html/images
+    cp -r tmp/assets /var/www/html/assets
+    cp -r tmp/images /var/www/html/images
     mv tmp/generic.html /var/www/html/generic.html
     mv tmp/elements.html /var/www/html/elements.html
     mv tmp/landing.html /var/www/html/landing.html

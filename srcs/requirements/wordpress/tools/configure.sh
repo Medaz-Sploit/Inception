@@ -5,7 +5,7 @@ while ! mariadb -h$MYSQL_HOST -u$WP_DATABASE_USR -p$WP_DATABASE_PWD $WP_DATABASE
     sleep 3
 done
 
-if [ -f "/var/www/html/index.html" ]; then
+if [ ! -f "/var/www/html/index.html" ]; then
 
     # static website
     mv /tmp/index.html /var/www/html/index.html

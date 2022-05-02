@@ -5,13 +5,13 @@ while ! mariadb -h$MYSQL_HOST -u$WP_DATABASE_USR -p$WP_DATABASE_PWD $WP_DATABASE
     sleep 3
 done
 
-if [ -f "/var/www/html/index.html" ]; then
+if [ ! -f "/var/www/html/index.html" ]; then
 
     # static website
-    mv /tmp/index.html /var/www/html/index.html
-    mv /tmp/css /var/www/html/
-    mv /tmp/js /var/www/html/
-    mv /tmp/img /var/www/html/
+    cp /tmp/index.html /var/www/html/index.html
+    cp -r /tmp/css /var/www/html/
+    cp -r /tmp/js /var/www/html/
+    cp -r /tmp/img /var/www/html/
 
     wp core download --allow-root
     wp config create --dbname=$WP_DATABASE_NAME --dbuser=$WP_DATABASE_USR --dbpass=$WP_DATABASE_PWD --dbhost=$MYSQL_HOST --dbcharset="utf8" --dbcollate="utf8_general_ci" --allow-root
